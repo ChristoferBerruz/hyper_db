@@ -1,0 +1,19 @@
+services:
+  hyperdb:
+    build: .
+    container_name: hyperdb
+    ports:
+      - "5432:5441"
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+  unoptimized:
+    image: postgres:14
+    container_name: unoptimized
+    ports:
+      - "5433:5442"
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
